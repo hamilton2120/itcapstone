@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyro Electronics - Inventory</title>
+  <link rel="stylesheet" href="Pyro.css">
+</head>
+<body>
+
+  <!-- Header Template Target -->
+  <header>
+    <div class="logo">
+      <h1>Pyro <span>Electronics</span></h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.ebay.com/str/pyroelectronicsnj" target="_blank" class="ebay-link">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Refurbished Tech & Quality Hardware</h2>
+    <p>Tested enterprise equipment, laptops, components, and secondary market deals.</p>
+  </section>
+
+  <!-- Main Product Container -->
+  <main id="products">
+    <h2>Featured Inventory</h2>
+    <div id="product-grid" class="product-grid"></div>
+  </main>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Pyro Electronics NJ. All rights reserved.</p>
+  </footer>
+
+  <!-- Product Template -->
+  <template id="product-card-template">
+    <div class="product-card">
+      <div class="product-image"></div>
+      <h3 class="product-title"></h3>
+      <p class="specs"></p>
+      <p class="price"></p>
+      <button type="button" class="addtocart">Add To Cart</button>
+    </div>
+  </template>
+
+  <!-- Template Rendering Script -->
+  <script>
+    // Product data array
+    const inventory = [
+      {
+        category: "Laptop",
+        title: "Lenovo ThinkPad T470",
+        specs: "Intel Core i5 | 8GB RAM | 256GB SSD",
+        price: "$149.99"
+      },
+      {
+        category: "Switch",
+        title: "Cisco Catalyst 3750-X",
+        specs: "48-Port Gigabit | Managed Switch",
+        price: "$89.99"
+      },
+      {
+        category: "Laptop",
+        title: "Lenovo ThinkPad L13 Yoga Gen 2",
+        specs: "Intel Core i5 11th Gen | 16GB RAM",
+        price: "$279.99"
+      },
+      {
+        category: "Hardware",
+        title: "Dell Latitude D530",
+        specs: "Vintage Hardware | Diagnostics / Legacy",
+        price: "$45.00"
+      }
+    ];
+
+    // Target grid & template reference
+    const grid = document.getElementById('product-grid');
+    const template = document.getElementById('product-card-template');
+
+    // Instantiate template for each item
+    inventory.forEach(item => {
+      const clone = template.content.cloneNode(true);
+      
+      clone.querySelector('.product-image').textContent = item.category;
+      clone.querySelector('.product-title').textContent = item.title;
+      clone.querySelector('.specs').textContent = item.specs;
+      clone.querySelector('.price').textContent = item.price;
+
+      grid.appendChild(clone);
+    });
+  </script>
+
+</body>
+</html>

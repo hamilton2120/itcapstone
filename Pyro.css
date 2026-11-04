@@ -1,0 +1,378 @@
+/* Base Styles*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121820;
+  color: #e2e8f0;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+
+header {
+  background-color: #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #ff5500;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: #ff5500;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ff5500;
+}
+
+nav a.ebay-link {
+  background-color: #ff5500;
+  color: #ffffff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+}
+
+nav a.ebay-link:hover {
+  background-color: #e04b00;
+}
+
+/* Hero and Banner */
+.hero,
+.store-hero {
+  background-color: #0f172a;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-bottom: 1px solid #334155;
+}
+
+.hero h2,
+.store-hero h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.hero p,
+.store-hero p {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Containers */
+main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+main h2 {
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.image-placeholder,
+.product-image {
+  background-color: #0f172a;
+  height: 150px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border: 1px dashed #334155;
+}
+
+.product-card h3 {
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.specs {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+  flex-grow: 1;
+}
+
+/* Store Controls */
+.store-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.6rem 1rem;
+  background-color: #0f172a;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: 1px solid #ff5500;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #0f172a;
+  color: #94a3b8;
+  border: 1px solid #475569;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.filter-btn.active, 
+.filter-btn:hover {
+  background-color: #ff5500;
+  color: #ffffff;
+  border-color: #ff5500;
+}
+
+/* Condition Badges */
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge.grade-a {
+  background-color: #065f46;
+  color: #34d399;
+}
+
+.badge.grade-b {
+  background-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+.sku {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.spec-list {
+  list-style: none;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.spec-list li {
+  margin-bottom: 0.3rem;
+  border-bottom: 1px dotted #334155;
+  padding-bottom: 0.2rem;
+}
+
+/* Footer and buttons */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #334155;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff5500;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Base Button Rule for Links and Submit Inputs */
+.btn {
+  text-decoration: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+  background-color: #ff5500;
+}
+
+/* Primary Action Buttons (Buy on eBay) */
+.btn-ebay {
+  background-color: #FF5500;
+  color: #ffffff;
+}
+.addtocart {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background-color: #334155;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-sizing: border-box;
+}
+.addtocart:hover {
+  background-color: #FF5500;
+}
+
+/* Secondary Action Buttons (Inquire / Contact) */
+.btn-inquire {
+  background-color: #334155;
+  color: #cbd5e1;
+}
+
+.btn-inquire:hover {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+/* Form Submit Buttons */
+.btn-primary {
+  background-color: #ff5500;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #e04b00;
+}
+
+/* Contact Syles */
+.contact-section {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.contact-form {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.contact-form label:first-of-type {
+  margin-top: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 1px solid #ff5500;
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #0f172a;
+  border-top: 1px solid #334155;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
